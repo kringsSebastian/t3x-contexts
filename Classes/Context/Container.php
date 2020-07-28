@@ -187,8 +187,6 @@ class Container extends \ArrayObject
                 unset($arContexts[$uid]);
             }
         } while (count($arContexts) > 0 && ++$loops < 10);
-//		DebuggerUtility::var_dump("matched:");
-//		DebuggerUtility::var_dump($matched);
         return $matched;
     }
 

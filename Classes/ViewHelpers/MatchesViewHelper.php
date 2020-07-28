@@ -67,8 +67,6 @@ class MatchesViewHelper
     public function render()
     {
         if (isset($this->arguments['alias'])) {
-//        	DebuggerUtility::var_dump((int) ContextMatcher::getInstance()
-//                ->matches($this->arguments['alias']));
             return (int) ContextMatcher::getInstance()
                 ->matches($this->arguments['alias']);
         }

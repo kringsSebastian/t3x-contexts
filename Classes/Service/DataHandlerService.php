@@ -176,14 +176,6 @@ class DataHandlerService
 							)
 							->execute();
 
-//						Deprecated
-                    	//                        $databaseConnection->exec_INSERTquery('tx_contexts_settings', array(
-//                            'context_uid' => $contextId,
-//                            'foreign_table' => $table,
-//                            'name' => $field,
-//                            'foreign_uid' => $uid,
-//                            'enabled' => $setting
-//                        ));
                     }
                 } elseif ($row) {
                 	$queryBuilder
@@ -192,7 +184,6 @@ class DataHandlerService
 							$queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($row['uid'], \PDO::PARAM_INT))
 						)
 						->execute();
-//                    $databaseConnection->exec_DELETEquery('tx_contexts_settings', 'uid=' . (int)$row['uid']);
                 }
             }
         }
@@ -272,12 +263,6 @@ class DataHandlerService
 			)
 			->execute()
 			->fetchAll();
-//		Deprecated
-//        $existingSettings = (array)$GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
-//            '*',
-//            'tx_contexts_settings',
-//            'context_uid = ' . (int)$contextId . ' AND foreign_uid = 0'
-//        );
 
         foreach ($settings as $table => $fields) {
             $fieldSettings = array();
@@ -295,12 +280,6 @@ class DataHandlerService
 						)
 						->set('enabled', (int)$enabled)
 						->execute();
-//                	Deprecated
-//                    $GLOBALS['TYPO3_DB']->exec_UPDATEquery(
-//                        'tx_contexts_settings',
-//                        'uid=' . (int)$fieldSettings[$field],
-//                        array('enabled' => (int)$enabled)
-//                    );
                 } else {
 					$queryBuilder->insert('tx_contexts_settings')
 						->values(
@@ -313,17 +292,6 @@ class DataHandlerService
 							)
 						)
 						->execute();
-//					Deprecated
-//                    $GLOBALS['TYPO3_DB']->exec_INSERTquery(
-//                        'tx_contexts_settings',
-//                        array(
-//                            'context_uid' => $contextId,
-//                            'foreign_table' => $table,
-//                            'name' => $field,
-//                            'foreign_uid' => 0,
-//                            'enabled' => (int)$enabled
-//                        )
-//                    );
                 }
             }
         }

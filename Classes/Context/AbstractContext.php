@@ -261,16 +261,6 @@ abstract class AbstractContext
 			)
 			->execute()
 			->fetch();
-//		Deprecated method
-//        $where = 'context_uid = ' . $this->uid;
-//        $where .= " AND foreign_table = '$table'";
-//        $where .= " AND foreign_uid IN ('" . implode("','", $uids) . "')";
-//
-//        $rows = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
-//            '*',
-//            'tx_contexts_settings',
-//            $where
-//        );
 
         foreach ($uids as $uid) {
             $this->settings[$table . '.' . $uid] = array();
