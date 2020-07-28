@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+
+    <ROOT>
+        <type>array</type>
+        <el>
+            <!-- el used to be empty but TYPO3 threw an error so IP config is now used instead-->
+            <field_ip>
+                <TCEforms>
+                    <label>LLL:EXT:contexts/Resources/Private/Language/flexform.xml:empty</label>
+                    <config>
+
+                    </config>
+                </TCEforms>
+            </field_ip>
+        </el>
+    </ROOT>
+</T3DataStructure>

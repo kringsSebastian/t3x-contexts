@@ -1,0 +1,19 @@
+<phpunit
+    backupGlobals="false"
+    colors="true"
+    verbose="true"
+    strict="true"
+    bootstrap="Tests/bootstrap.php"
+>
+    <testsuites>
+        <testsuite name="Full Test Suite">
+            <directory>./Tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">Classes/</directory>
+        </whitelist>
+    </filter>
+</phpunit>
